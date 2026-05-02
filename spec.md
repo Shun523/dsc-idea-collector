@@ -96,7 +96,7 @@ iPadのSafariで `http://[PCのIPアドレス]:5173` を開けばアプリが使
 | フロントエンド | React + TypeScript（Vite） | 現場で最もよく使われる構成。学習資料が豊富 |
 | バックエンド | Node.js + Express + TypeScript | シンプルで学びやすいサーバー構成 |
 | スタイリング | Tailwind CSS | クラス名を書くだけでスタイルが当てられる |
-| AI評価 | Anthropic Claude API | このアプリのコアになる部分 |
+| AI評価 | Google Gemini API | 無料枠があり学習に最適 |
 | データ保存 | JSONファイル（ローカル） | DBのセットアップ不要で始められる |
 | 実行環境 | ローカルPC（iPad と同じWi-Fi） | iPad から PC のサーバーにアクセスする |
 
@@ -125,7 +125,7 @@ ds-idea-box/
 │   │   │   ├── posts.ts              # GET  /api/posts
 │   │   │   └── admin.ts              # 管理系API
 │   │   ├── lib/
-│   │   │   ├── claudeEvaluator.ts    # Claude API呼び出し
+│   │   │   ├── geminiEvaluator.ts    # Gemini API呼び出し
 │   │   │   ├── commentSelector.ts    # コメント重み付き抽選
 │   │   │   └── dataStore.ts          # JSONファイルの読み書き
 │   │   └── index.ts                  # Expressサーバーの起点
@@ -190,9 +190,9 @@ ds-idea-box/
 
 ### 6.2 AI評価（Claude API）
 
-バックエンドの `/api/submit` ルートから Claude API を呼び出す。
+バックエンドの `/api/submit` ルートから Gemini API を呼び出す。
 
-#### Claude に渡すプロンプト
+#### Gemini に渡すプロンプト
 
 ```
 あなたは岡山大学DS部（データサイエンス部）のアイデア審査AIです。
@@ -290,7 +290,7 @@ D: 基本的なアイデア。ブラッシュアップが必要
 ## 8. 環境変数（`backend/.env`）
 
 ```env
-ANTHROPIC_API_KEY=sk-ant-xxxxx
+GEMINI_API_KEY=（Google AI StudioからコピーしたAPIキー）
 ADMIN_PASSWORD=（自分で決める）
 PORT=3001
 ```
