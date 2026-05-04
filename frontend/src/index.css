@@ -1,1 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Yuji+Boku&family=Reggae+One&display=swap');
 @import "tailwindcss";
+
+.font-jp-bold {
+  font-family: 'Yuji Boku', 'Reggae One', serif;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
